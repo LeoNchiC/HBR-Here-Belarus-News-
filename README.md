@@ -9,7 +9,7 @@
 + ### games
 + ### sports 
 + ### arts
-+ ### and much more.
++ ### and much more
 
 ---
 
