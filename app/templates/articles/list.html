@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} HBR {% endblock %}
+
+{% block content %}
+    <a style="float:right" href="http://127.0.0.1:8000/admin/login/?next=/admin/" type="button" class="btn btn-primary">Админ</a>
+	<nav aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'index_page' %}">Домой</a></li>
+	  </ol>
+	</nav>
+
+	<div class="row">
+		{%for article in articles %}
+			<div class="col-sm-4">
+				<div class="card" style="width: 18rem; bottom: -300px">
+				  <img src="https://pbs.twimg.com/media/CbEoxqZUMAE-Isc.jpg" class="card-img-top" alt="...">
+				  <div class="card-body">
+				    <h5 class="card-title">{{ article.article_title }}</h5>
+				    <p class="card-text">
+				    	<!--  -->
+				    </p>
+				    <a href="{% url 'detail_page' article_id=article.id %}" type="button" class="btn btn-primary">Читать</a>
+
+				  </div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+{% endblock %}

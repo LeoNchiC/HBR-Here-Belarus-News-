@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ article.article_title }}{% endblock %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'index_page' %}">Домой</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ article.article_title }}</li>
+        </ol>
+    </nav>
+       {% for image in article.images.all %}
+           <img class="img-fluid" src="{{ MEDIA_URL }}{{ image.image_article.url }}"/>
+        {% endfor %}
+
+    <h1>{{ article.article_title }}</h1>
+    <h4>{{ article.article_text }}</h4>
+    <em>{{ article.pub_date }}</em>
+
+    <form action="{% url 'leave_comment' article_id=article.id %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="author_name" placeholder="Ваше имя" required><br>
+        <textarea name="comment_text" placeholder="Ваш комментарий" cols="30" rows="10" required></textarea>
+        </br>
+        <button type="submit">Оставить комментарий</button>
+
+
+    </form>
+    {% for comment in article.comments.all %}
+        <div>
+        {{ comment.author_name  }}
+            :
+        {{ comment.comment_text }}
+        </div>
+    {% endfor %}
+
+
+{% endblock %}
