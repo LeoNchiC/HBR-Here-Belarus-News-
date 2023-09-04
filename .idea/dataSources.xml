@@ -10,5 +10,12 @@
       <jdbc-url>jdbc:sqlite:C:\Users\Flipuk\Documents\Django\HBR\db.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="db" uuid="57de370f-187f-4244-8e8c-95ebf10c32d3">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Flipuk\Documents\GitHub\HBR-Here-Belarus-News-\db.sqlite3</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

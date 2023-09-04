@@ -1,14 +1,99 @@
 {% extends 'base.html' %}
 
-{% block title %} HBR {% endblock %}
+{% block title %} HBN {% endblock %}
 
 {% block content %}
     <a style="float:right" href="http://127.0.0.1:8000/admin/login/?next=/admin/" type="button" class="btn btn-primary">Админ</a>
-	<nav aria-label="breadcrumb">
-	  <ol class="breadcrumb">
-	    <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'index_page' %}">Домой</a></li>
-	  </ol>
-	</nav>
+
+    <style>
+    body {
+      background-image: url("https://get.wallhere.com/photo/night-planet-space-sky-stars-clouds-Earth-space-art-atmosphere-astronomy-Aurora-midnight-atmosphere-of-earth-outer-space-astronomical-object-362454.jpg");
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+    }
+    .logo {
+      font-family: Jura, sans-serif;
+      text-align: center;
+      font-size: 72px;
+      font-weight: bold;
+    }
+    .news {
+      text-align: center;
+      font-size: 54px;
+      font-weight: normal;
+    }
+    .search-bar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .search-bar input {
+      width: 200px;
+      height: 25px;
+      border-radius: 5px;
+      border: none;
+      padding: 5px;
+    }
+    .search-bar button {
+      width: 75px;
+      height: 25px;
+      border-radius: 5px;
+      border: none;
+      background-color: white;
+      color: black;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      list-style-type: none;
+      margin-top: 20px;
+    }
+    .nav li {
+      font-size: 18px;
+    }
+    .nav li a {
+      text-decoration: none;
+      color: white;
+    }
+    .nav li a:hover {
+      color: gray;
+      font-style: normal;
+    }
+
+    .quote {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 24px;
+      font-style: italic;
+    }
+    .clock {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 18px;
+    }
+
+  </style>
+  <body>
+  <div class="container">
+    <div class="logo">HBN</div>
+    <div class="news">news portal</div>
+
+    <ul class="nav" style="text-decoration: underline">
+      <li><a href="#">Belarus</a></li>
+      <li><a href="#">World</a></li>
+      <li><a href="#">Sport</a></li>
+      <li><a href="#">Game</a></li>
+      <li><a href="#">Fashion</a></li>
+      <li><a href="#">Culture</a></li>
+    </ul>
+    <div class="quote">"The only thing we have to fear is fear itself."</div>
 
 	<div class="row">
 		{%for article in articles %}
@@ -16,7 +101,7 @@
 				<div class="card" style="width: 18rem; bottom: -300px">
 				  <img src="https://pbs.twimg.com/media/CbEoxqZUMAE-Isc.jpg" class="card-img-top" alt="...">
 				  <div class="card-body">
-				    <h5 class="card-title">{{ article.article_title }}</h5>
+				    <h5 class="card-title" style="color: black">{{ article.article_title }}</h5>
 				    <p class="card-text">
 				    	<!--  -->
 				    </p>

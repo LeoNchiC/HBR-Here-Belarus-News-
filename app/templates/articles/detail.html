@@ -3,15 +3,27 @@
 {% block title %}{{ article.article_title }}{% endblock %}
 
 {% block content %}
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'index_page' %}">Домой</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ article.article_title }}</li>
-        </ol>
-    </nav>
-       {% for image in article.images.all %}
-           <img class="img-fluid" src="{{ MEDIA_URL }}{{ image.image_article.url }}"/>
-        {% endfor %}
+{#    <nav aria-label="breadcrumb">#}
+{#        <ol class="breadcrumb">#}
+{#            <li class="breadcrumb-item"><a href="{% url 'index_page' %}">Домой</a></li>#}
+{#            <li class="breadcrumb-item active" aria-current="page">{{ article.article_title }}</li>#}
+{#        </ol>#}
+{#    </nav>#}
+
+    <style>
+    body {
+      background-color: cornsilk;
+      color: black;
+      font-family: Arial, sans-serif;
+    }
+
+    </style>
+
+    <a style="position: absolute; left: 50px; top: 50px; " href="http://127.0.0.1:8000/" type="button" class="btn btn-primary">Домой</a>
+
+    {% for image in article.images.all %}
+        <img class="img-fluid" src="{{ MEDIA_URL }}{{ image.image_article.url }}" style="margin-top: 50px;"/>
+    {% endfor %}
 
     <h1>{{ article.article_title }}</h1>
     <h4>{{ article.article_text }}</h4>
